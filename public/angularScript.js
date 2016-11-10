@@ -1,6 +1,6 @@
 angular.module("quoteApp", [])
 
-/*.config(['$httpProvider', function($httpProvider) {
+.config(['$httpProvider', function($httpProvider) {
 
         $httpProvider.defaults.useXDomain = true;
 
@@ -8,7 +8,7 @@ angular.module("quoteApp", [])
 
     }
 
-])*/
+])
 
 .controller('mainCtrl', function($scope, dataService, $http) {
 
