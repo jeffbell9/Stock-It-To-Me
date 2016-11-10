@@ -1,0 +1,42 @@
+body {
+	color: black;
+	background-color: green;
+}
+
+h1 {
+	text-align: center;
+	font-size: 50px;
+	margin-top: 50px;
+}
+
+form {
+	text-align: center;
+	margin-top: 75px;
+	margin-left: 40px;
+}
+
+.button {
+	display: inline-block;
+}
+
+.company {
+	border-right: solid 2px black;
+	text-align: right;
+	color: gold;
+}
+
+.price {
+	text-align: left;
+	color: gold;
+}
+
+.table-row {
+	border: solid 2px black;
+}
+
+.table {
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+}

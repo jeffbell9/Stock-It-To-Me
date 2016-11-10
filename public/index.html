@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quotes</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<link rel='stylesheet' href='css/styles.css' type='text/css'>
+</head>
+<body ng-app="quoteApp">
+	<h1>Stock It To Me!</h1>
+	<div ng-controller="mainCtrl" class="container">
+		<div class="row col-xs-12">
+			<form>
+				<input type="text" id="ticker" name="ticker">
+				<input type="submit" value="add" class="button" ng-click="addTicker()">
+				<input type="submit" value="remove" class="button" ng-click="removeTicker()">
+			</form>
+		</div>
+		<div id="table-div" class="row col-xs-12">
+			<table class="table">
+				<tr ng-repeat="ticker in tickers" class="table-row">
+					<td class="company">{{ticker.company}}</td>
+					<td class="price">{{ticker.price}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
+integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" 
+crossorigin="anonymous"></script>
+	<script src="vendor/angular.js" type="text/javascript"></script>
+	<script src="angularScript.js" type="text/javascript"></script>
+</body>
+</html>
