@@ -41,6 +41,9 @@ angular.module("quoteApp", [])
 	$scope.removeTicker = function() {
 		var ticker = document.getElementById("ticker");
 		var name = ticker.value;
+		var nameJSON = {
+							"company": name
+						};
 		
 		for (var t in $scope.tickers) {
 			if ($scope.tickers[t].company === name) {
@@ -49,7 +52,7 @@ angular.module("quoteApp", [])
 
 		}
 
-		$http.get('/mock/tickers.json/' + name)
+		$http.post('/mock/tickers.json/delete', nameJSON)
 		.then(console.log("ticker has been removed!"));
 
 		ticker.value = "";
