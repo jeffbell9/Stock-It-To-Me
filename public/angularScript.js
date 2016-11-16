@@ -1,15 +1,5 @@
 angular.module("quoteApp", [])
 
-.config(['$httpProvider', function($httpProvider) {
-
-        $httpProvider.defaults.useXDomain = true;
-
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
-
-    }
-
-])
-
 .controller('mainCtrl', function($scope, dataService, $http) {
 
 	dataService.getTickers(function(response) {

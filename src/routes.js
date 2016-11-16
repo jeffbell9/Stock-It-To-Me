@@ -3,6 +3,7 @@ var router = express.Router();
 var fs = require('fs');
 
 router.post('/delete', function (req, res) {
+	res.end();
 
 	var fileContents = fs.readFileSync('public/mock/tickers.json', {encoding: 'utf8'});
 	fileContents = JSON.parse(fileContents);
@@ -19,6 +20,8 @@ router.post('/delete', function (req, res) {
 });
 
 router.post('/', function (req, res) {
+	res.end();
+
 	var newQuote = JSON.stringify(req.body);
 	var fileContents = fs.readFileSync('public/mock/tickers.json', {encoding: 'utf8'});
 
