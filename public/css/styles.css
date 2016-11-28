@@ -20,18 +20,30 @@ form {
 }
 
 .company {
+	height: 30px;
+	width: 60px;
 	border-right: solid 2px black;
 	text-align: right;
 	color: gold;
+	background-color: #404040;
 }
 
 .price {
+	height: 30px;
+	width: 70px;
 	text-align: left;
 	color: gold;
+	background-color: #494949;
 }
 
 .table-row {
 	border: solid 2px black;
+}
+
+.table-row-div {
+	border-right: solid 2px black;
+	border-left: solid 2px black;
+	border-bottom: solid 2px black;
 }
 
 .table {
@@ -39,4 +51,12 @@ form {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 50px;
+	margin-bottom: 0;
+}
+
+.table-div {
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
 }

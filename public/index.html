@@ -16,11 +16,67 @@
 				<input type="submit" value="remove" class="button" ng-click="removeTicker()">
 			</form>
 		</div>
-		<div id="table-div" class="row col-xs-12">
+		<div ng-if="tickers.length>0" class="row col-xs-12">
 			<table class="table">
 				<tr ng-repeat="ticker in tickers" class="table-row">
 					<td class="company">{{ticker.company}}</td>
 					<td class="price">{{ticker.price}}</td>
+				</tr>
+			</table>
+		</div>
+		<div ng-if="tickers.length>0" class="row col-xs-12">
+			<table class="table-div">
+				<tr class="table-row-div">
+					<td class="company"></td>
+					<td class="price"></td>
+				</tr>
+				<tr class="table-row">
+					<td class="company"></td>
+					<td class="price"></td>
+				</tr>
+				<tr class="table-row">
+					<td class="company"></td>
+					<td class="price"></td>
+				</tr>
+				<tr class="table-row">
+					<td class="company"></td>
+					<td class="price"></td>
+				</tr>
+				<tr class="table-row">
+					<td class="company"></td>
+					<td class="price"></td>
+				</tr>
+				<tr class="table-row">
+					<td class="company"></td>
+					<td class="price"></td>
+				</tr>
+			</table>
+		</div>
+		<div ng-if="tickers.length===0" class="row col-xs-12">
+			<table class="table">
+				<tr class="table-row">
+					<td class="company"></td>
+					<td class="price"></td>
+				</tr>
+				<tr class="table-row">
+					<td class="company"></td>
+					<td class="price"></td>
+				</tr>
+				<tr class="table-row">
+					<td class="company"></td>
+					<td class="price"></td>
+				</tr>
+				<tr class="table-row">
+					<td class="company"></td>
+					<td class="price"></td>
+				</tr>
+				<tr class="table-row">
+					<td class="company"></td>
+					<td class="price"></td>
+				</tr>
+				<tr class="table-row">
+					<td class="company"></td>
+					<td class="price"></td>
 				</tr>
 			</table>
 		</div>
