@@ -53,7 +53,7 @@ angular.module("quoteApp", [])
 .service('dataService', function($http) {
 
 	this.getQuote = function(ticker, callback) {
-		$http.get('https://www.google.com/finance/info?q=NSE:' + ticker, {'Access-Control-Allow-Origin': '*'})
+		$http.get('https://www.google.com/finance/info?q=NSE:' + ticker)
 		.then(callback);
 	}
 
