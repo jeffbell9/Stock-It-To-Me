@@ -34,27 +34,23 @@
 		</div>
 		<div ng-if="tickers.length>0" class="row col-xs-12">
 			<table class="table-div">
-				<tr class="table-row-div">
+				<tr ng-if="tickers.length<=5" class="table-row-div">
 					<td class="company"></td>
 					<td class="price"></td>
 				</tr>
-				<tr class="table-row">
+				<tr ng-if="tickers.length<=4" class="table-row">
 					<td class="company"></td>
 					<td class="price"></td>
 				</tr>
-				<tr class="table-row">
+				<tr ng-if="tickers.length<=3" class="table-row">
 					<td class="company"></td>
 					<td class="price"></td>
 				</tr>
-				<tr class="table-row">
+				<tr ng-if="tickers.length<=2" class="table-row">
 					<td class="company"></td>
 					<td class="price"></td>
 				</tr>
-				<tr class="table-row">
-					<td class="company"></td>
-					<td class="price"></td>
-				</tr>
-				<tr class="table-row">
+				<tr ng-if="tickers.length<=1" class="table-row">
 					<td class="company"></td>
 					<td class="price"></td>
 				</tr>

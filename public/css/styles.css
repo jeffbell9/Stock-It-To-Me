@@ -20,7 +20,7 @@ form {
 }
 
 .company {
-	height: 30px;
+	height: 40px;
 	width: 60px;
 	border-right: solid 2px black;
 	text-align: right;
@@ -29,7 +29,7 @@ form {
 }
 
 .price {
-	height: 30px;
+	height: 40px;
 	width: 70px;
 	text-align: left;
 	color: gold;

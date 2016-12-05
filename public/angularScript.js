@@ -10,10 +10,8 @@ angular.module("quoteApp", [])
 		var ticker = document.getElementById("ticker");
 		var company = ticker.value;
 
-		dataService.getQuote(company, function(response) {
-			var quote = response.data;
-			quote = quote.replace("//", " ");
-			quote = JSON.parse(quote);
+		dataService.getQuote(company, function(data) {
+			var quote = data;
 
 			var data = {"company": company, "price": quote[0].l};
 
@@ -53,8 +51,8 @@ angular.module("quoteApp", [])
 .service('dataService', function($http) {
 
 	this.getQuote = function(ticker, callback) {
-		$http.get('https://www.google.com/finance/info?q=NSE:' + ticker)
-		.then(callback);
+		$http.jsonp('https://www.google.com/finance/info?q=NSE:' + ticker + '&callback=JSON_CALLBACK')
+		.success(callback);
 	}
 
 	this.getTickers = function(callback) {
