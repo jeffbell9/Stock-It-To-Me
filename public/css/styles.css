@@ -21,11 +21,12 @@ form {
 
 .company {
 	height: 40px;
-	width: 60px;
+	width: 65px;
 	border-right: solid 2px black;
 	text-align: right;
 	color: gold;
 	background-color: #404040;
+	text-align: center;
 }
 
 .price {
@@ -34,6 +35,7 @@ form {
 	text-align: left;
 	color: gold;
 	background-color: #494949;
+	text-align: center;
 }
 
 .table-row {
@@ -70,4 +72,8 @@ form {
    bottom: 0px; 
    background-color: white;
    z-index: 99;
+ }
+
+ .symbol {
+ 	color: gray;
  }
