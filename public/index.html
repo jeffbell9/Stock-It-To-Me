@@ -17,80 +17,90 @@
 	</script> 
 	<div ng-controller="mainCtrl" class="container">
 		<h1>Stock It To Me!</h1>
-		<div class="row col-xs-12">
-			<form>
-				<input type="text" id="ticker" placeholder="ticker symbol" name="ticker">
-				<input type="submit" value="add" class="button" ng-click="addTicker()">
-				<input type="submit" value="remove" class="button" ng-click="removeTicker()">
-			</form>
+		<div class="row">
+			<div class="col-xs-12">
+				<form>
+					<input type="text" id="ticker" placeholder="ticker symbol" name="ticker">
+					<input type="submit" value="add" class="button" ng-click="addTicker()">
+					<input type="submit" value="remove" class="button" ng-click="removeTicker()">
+				</form>
+			</div>
 		</div>
-		<div class="row col-xs-12">
-			<table class="table">
-				<tr class="table-row">
-					<td class="company symbol">Symbol</td>
-					<td class="price symbol">Last</td>
-				</tr>
-			</table>
+		<div class="row">
+			<div class="col-xs-12">
+				<table class="table">
+					<tr class="table-row">
+						<td class="company symbol">Symbol</td>
+						<td class="price symbol">Last</td>
+					</tr>
+				</table>
+			</div>
 		</div>
-		<div ng-if="tickers.length>0" class="row col-xs-12">
-			<table class="table-div">
-				<tr ng-repeat="ticker in tickers" class="table-row-div">
-					<td class="company">{{ticker.company}}</td>
-					<td class="price">{{ticker.price}}</td>
-				</tr>
-			</table>
+		<div ng-if="tickers.length>0" class="row">
+			<div class="col-xs-12">
+				<table class="table-div">
+					<tr ng-repeat="ticker in tickers" class="table-row-div">
+						<td class="company">{{ticker.company}}</td>
+						<td class="price">{{ticker.price}}</td>
+					</tr>
+				</table>
+			</div>
 		</div>
-		<div ng-if="tickers.length>0" class="row col-xs-12">
-			<table class="table-div">
-				<tr ng-if="tickers.length<=5" class="table-row-div">
-					<td class="company"></td>
-					<td class="price"></td>
-				</tr>
-				<tr ng-if="tickers.length<=4" class="table-row-div">
-					<td class="company"></td>
-					<td class="price"></td>
-				</tr>
-				<tr ng-if="tickers.length<=3" class="table-row-div">
-					<td class="company"></td>
-					<td class="price"></td>
-				</tr>
-				<tr ng-if="tickers.length<=2" class="table-row-div">
-					<td class="company"></td>
-					<td class="price"></td>
-				</tr>
-				<tr ng-if="tickers.length<=1" class="table-row-div">
-					<td class="company"></td>
-					<td class="price"></td>
-				</tr>
-			</table>
+		<div ng-if="tickers.length>0" class="row">
+			<div class="col-xs-12">
+				<table class="table-div">
+					<tr ng-if="tickers.length<=5" class="table-row-div">
+						<td class="company"></td>
+						<td class="price"></td>
+					</tr>
+					<tr ng-if="tickers.length<=4" class="table-row-div">
+						<td class="company"></td>
+						<td class="price"></td>
+					</tr>
+					<tr ng-if="tickers.length<=3" class="table-row-div">
+						<td class="company"></td>
+						<td class="price"></td>
+					</tr>
+					<tr ng-if="tickers.length<=2" class="table-row-div">
+						<td class="company"></td>
+						<td class="price"></td>
+					</tr>
+					<tr ng-if="tickers.length<=1" class="table-row-div">
+						<td class="company"></td>
+						<td class="price"></td>
+					</tr>
+				</table>
+			</div>
 		</div>
-		<div ng-if="tickers.length===0" class="row col-xs-12">
-			<table class="table-div">
-				<tr class="table-row-div">
-					<td class="company"></td>
-					<td class="price"></td>
-				</tr>
-				<tr class="table-row">
-					<td class="company"></td>
-					<td class="price"></td>
-				</tr>
-				<tr class="table-row">
-					<td class="company"></td>
-					<td class="price"></td>
-				</tr>
-				<tr class="table-row">
-					<td class="company"></td>
-					<td class="price"></td>
-				</tr>
-				<tr class="table-row">
-					<td class="company"></td>
-					<td class="price"></td>
-				</tr>
-				<tr class="table-row">
-					<td class="company"></td>
-					<td class="price"></td>
-				</tr>
-			</table>
+		<div ng-if="tickers.length===0" class="row">
+			<div class="col-xs-12">
+				<table class="table-div">
+					<tr class="table-row-div">
+						<td class="company"></td>
+						<td class="price"></td>
+					</tr>
+					<tr class="table-row">
+						<td class="company"></td>
+						<td class="price"></td>
+					</tr>
+					<tr class="table-row">
+						<td class="company"></td>
+						<td class="price"></td>
+					</tr>
+					<tr class="table-row">
+						<td class="company"></td>
+						<td class="price"></td>
+					</tr>
+					<tr class="table-row">
+						<td class="company"></td>
+						<td class="price"></td>
+					</tr>
+					<tr class="table-row">
+						<td class="company"></td>
+						<td class="price"></td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
