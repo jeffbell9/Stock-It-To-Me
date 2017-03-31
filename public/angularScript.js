@@ -17,7 +17,7 @@ angular.module("quoteApp", [])
 
 			$scope.tickers.push(data);
 
-			$http.post('mock/tickers.json', data)
+			$http.post('http://localhost:3000/mock/tickers.json', data)
 			.then(console.log("mock/tickers.json has been updated!"));
 
 		});
@@ -40,7 +40,7 @@ angular.module("quoteApp", [])
 
 		}
 
-		$http.post('mock/tickers.json/delete', nameJSON)
+		$http.post('http://localhost:3000/mock/tickers.json/delete', nameJSON)
 		.then(console.log("ticker has been removed!"));
 
 		ticker.value = "";
