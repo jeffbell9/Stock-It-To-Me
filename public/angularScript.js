@@ -56,7 +56,7 @@ angular.module("quoteApp", [])
 	}
 
 	this.getTickers = function(callback) {
-		$http.get('mock/tickers.json')
+		$http.get('http://localhost:3000/mock/tickers.json')
 		.then(callback);
 	}
 
