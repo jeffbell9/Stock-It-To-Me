@@ -1,8 +1,19 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var routes = require('./routes');
+var fs = require('fs');
+var https = require('https');
+
+var httpsOptions = {
+	key: fs.readFileSync(__dirname + '/key.pem'),
+	cert: fs.readFileSync(__dirname + '/cert.pem')
+}
 
 var app = express();
+
+https.createServer(httpsOptions, app).listen(3000, function(){
+	console.log("The server is running on port 3000!");
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,7 +31,3 @@ app.use(function(req, res, next){
 app.use('/', express.static('public'));
 
 app.use('/mock/tickers.json', routes);
-
-app.listen(3000, function(){
-	console.log("The server is running on port 3000!");
-});
