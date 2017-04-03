@@ -6,6 +6,8 @@ angular.module("quoteApp", [])
 		$scope.tickers = response.data;
 	})
 
+	
+
 	$scope.addTicker = function() {
 		var ticker = document.getElementById("ticker");
 		var company = ticker.value;
