@@ -3,10 +3,26 @@ angular.module("quoteApp", [])
 .controller('mainCtrl', function($scope, dataService, $http) {
 
 	dataService.getTickers(function(response) {
-		$scope.tickers = response.data;
-	})
+		var symbols = response.data;
+		$scope.tickers = [];
 
-	
+		$http.post('mock/symbols.json/clear')
+		.then(console.log("mock/symbols.json has been emptied!"));
+
+		for (symbol in symbols) {
+			dataService.getQuote(symbols[symbol], function(data) {
+				var quote = data[0].l;
+				var company = data[0].t;
+
+				var postData = {"company": company, "price": quote};
+
+				$scope.tickers.push(postData);
+
+				$http.post('mock/symbols.json', postData)
+				.then(console.log("mock/symbols.json has been updated!"));
+			});
+		}
+	})
 
 	$scope.addTicker = function() {
 		var ticker = document.getElementById("ticker");
@@ -19,8 +35,8 @@ angular.module("quoteApp", [])
 
 			$scope.tickers.push(data);
 
-			$http.post('mock/tickers.json', data)
-			.then(console.log("mock/tickers.json has been updated!"));
+			$http.post('mock/symbols.json/add', data)
+			.then(console.log("mock/symbols.json has been updated!"));
 
 		});
 
@@ -42,7 +58,7 @@ angular.module("quoteApp", [])
 
 		}
 
-		$http.post('mock/tickers.json/delete', nameJSON)
+		$http.post('mock/symbols.json/delete', nameJSON)
 		.then(console.log("ticker has been removed!"));
 
 		ticker.value = "";
@@ -58,7 +74,7 @@ angular.module("quoteApp", [])
 	}
 
 	this.getTickers = function(callback) {
-		$http.get('mock/tickers.json')
+		$http.get('mock/symbols.json')
 		.then(callback);
 	}
 
