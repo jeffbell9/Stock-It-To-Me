@@ -15,7 +15,7 @@ app.use(function(req, res, next) {
 
 app.use('/', express.static('public'));
 
-app.use('/mock/symbols.json', routes);
+app.use('/mock/tickers.json', routes);
 
 app.listen(3000, function() {
 	console.log("The server is running on port 3000!");
