@@ -19,13 +19,14 @@ angular.module("quoteApp", [])
 				var quote = info[0].l;
 				var company = info[0].t;
 
-				var postData = {"company": company, "price": quote};
+				var data = {"company": company, "price": quote};
 
-				$scope.tickers.push(postData);
+				$scope.tickers.push(data);
 
-				$http.post('mock/tickers.json', postData)
+				$http.post('mock/tickers.json', data)
 				.then(console.log("mock/tickers.json has been updated!"));
 			}
+			document.getElementById("hideAll").style.display = "none";
 		});
 	})
 
@@ -75,7 +76,10 @@ angular.module("quoteApp", [])
 
 	this.getQuote = function(ticker, callback) {
 		$http.jsonp('https://www.google.com/finance/info?q=NSE:' + ticker + '&callback=JSON_CALLBACK')
-		.success(callback);
+		.success(callback)
+		.error(function() {
+			alert("Invalid ticker symbol");
+		});
 	}
 
 	this.getTickers = function(callback) {
