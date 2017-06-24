@@ -21,4 +21,4 @@ app.use('/mock/tickers.json', routes);
 
 app.listen(port, function() {
 	console.log("The server is running on port " + port + "!");
-})
+});
